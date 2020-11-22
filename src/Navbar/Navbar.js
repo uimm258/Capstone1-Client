@@ -23,7 +23,7 @@ export default class Navbar extends Component {
           </div>
           <br />
           <div id="Rules">
-            <h1>剧本杀须知</h1>
+            <h1>剧本杀须知：</h1>
             <Rules />
           </div>
           <br />
