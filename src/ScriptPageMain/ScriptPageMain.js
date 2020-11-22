@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Script from '../Script/Script'
 import Context from '../Context'
 import {findScript} from '../scripts-helpers'
+import './ScriptPageMain.css'
 
 export default class ScriptPageMain extends Component {
     static defaultProps = {

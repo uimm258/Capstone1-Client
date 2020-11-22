@@ -85,7 +85,7 @@ class App extends Component {
 
           <header className="App_header">
             <h1>
-              <Link to="/">Y-Rspace</Link>
+              <Link to="/">Y-Rspace 剧本杀桌游店</Link>
             </h1>
           </header>
 

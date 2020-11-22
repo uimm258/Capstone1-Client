@@ -1,6 +1,6 @@
 .Script {
-    --script-height: 108px;
-    background-color: #010d1e;
+    --script-height: 158px;
+    background-color: #652b01;
     color: #cacaca;
     height: var(--script-height);
     margin-bottom: 8px;
@@ -11,24 +11,25 @@
 
 .Script_title {
     font-family: var(--custom-font);
-    font-size: 20px;
+    font-size: 30px;
     margin: 0;
     max-width: 80%;
     min-height: 24px;
 }
 
 .Script_title a {
-    color: #cacaca;
+    color:white;
     display: block;
     text-decoration: none;
 }
 
 .SScript_title a:hover {
-    color: #FFB72F;
+    color: #cacaca;
 }
 
 .Script_info {
-  color: #a7a5a5;
-  font-size: 14px;
+  color: white;
+  font-size: 18px;
   position: absolute;
+  padding-top: 20px;
 }

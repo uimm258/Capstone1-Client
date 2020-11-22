@@ -8,24 +8,31 @@
 	float: left; }
 
 #nav li a {
-		display: block;
-		padding: 8px 15px;
-		text-decoration: none;
-		font-weight: bold;
-		color: #069;
-		border-right: 1px solid #ccc; }
+	display: block;
+	padding: 8px 15px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #069;
+	border-right: 1px solid #ccc; }
 
 #nav li a {
-		display: block;
-		padding: 8px 15px;
-		text-decoration: none;
-		font-weight: bold;
-		color: #069;
-        border-right: 1px solid #ccc; }
+	display: block;
+	padding: 8px 15px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #069;
+	border-right: 1px solid #ccc; 
+}
 
 footer {
     position: 'absolute';
     bottom:0;
+}
+
+.Navbar_info {
+	display: block;
+	font-family: var(--custom-font);
+	padding-left: 32px;
 }
         
 /* Media screen size */

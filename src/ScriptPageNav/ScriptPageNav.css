@@ -7,12 +7,13 @@
 }
   
 .ScriptPageNav_category-name {
-    color: #b5b3b3;
+    color: white;
     font-family: var(--custom-font);
-    font-size: 40px;
+    font-size: 60px;
     height: 50vh;
     margin: 0 0 0 auto;
     text-orientation: upright;
     width: 75px;
     writing-mode: vertical-lr;
+    padding-right: 12px;
 }

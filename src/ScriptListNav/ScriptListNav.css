@@ -17,8 +17,8 @@
 }
 
 .ScriptListNav_category-link {
-    background-color: #030f1f;
-    color: #b5b3b3;
+    background-color: #652b01;
+    color: white;
     display: block;
     font-family: var(--custom-font);
     font-size: 20px;
@@ -29,19 +29,22 @@
 }
 
 .ScriptListNav_category-link:hover {
-    color: #FFB72F;
+    color: #b5b3b3;
     cursor: pointer;
 }
 
 .ScriptListNav_category-link.active {
-    background-color: #102541;
+    background-color: #cc5803;
+    font-weight: bold;
+    font-size: 40px;
+    color:white;
 }
   
 .ScriptListNav_num-scripts {
-    color: #adadad;
+    color: #fff8f0;
     display: block;
     float: right;
-    font-size: 10px;
+    font-size: 13px;
 }
 
 .ScriptListNav_back-button {

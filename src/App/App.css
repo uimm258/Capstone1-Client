@@ -10,7 +10,7 @@
 }
 
 .App_nav {
-  background-color: #0b1b32;
+  background-color: #cc5803;
   color: #fff;
   grid-area: sidebar;
   height: 100vh;
@@ -18,21 +18,22 @@
 }
 
 .App_header {
-  background-color: #0b1f3a;
-  color: #bdbdbd;
+  background-color: #D88821;
+  color: white;
   font-family: var(--custom-font);
   grid-area: header;
-  padding-left: 16px;
-  padding-top: 32px;
+  padding-left: 32px;
+  padding-top: 16px;
   text-shadow: 2px 1px 2px black;
 }
 
 .App_header a {
-  color: #bdbdbd;
+  color: white;
+  font-size: 60px;
 }
 
 .App_main {
-  background-color: #102541;
+  background-color: #efefef;
   grid-area: main;
   height: calc(100vh - 120px);
   overflow: auto;
@@ -41,7 +42,7 @@
 @media (prefers-reduced-motion: no-preference) {
 
 .App_main {
-  background-color: #102541;
+  background-color: #efefef;
   grid-area: main;
   height: calc(100vh - 120px);
   overflow: auto;
