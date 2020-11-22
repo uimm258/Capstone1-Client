@@ -1,10 +1,22 @@
-.ScriptListNav__list {
+
+.ScriptListNav_list {
     list-style-type: none;
     margin: 130px 0 0;
     padding: 0;
 }
 
-.ScriptListNav__category-link {
+.category {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+  
+.ScriptListNav__button-wrapper {
+    margin: 0 0 0 auto;
+    max-width: 180px;
+}
+
+.ScriptListNav_category-link {
     background-color: #030f1f;
     color: #b5b3b3;
     display: block;
@@ -16,18 +28,26 @@
     text-decoration: none;
 }
 
-.ScriptListNav__category-link:hover {
+.ScriptListNav_category-link:hover {
     color: #FFB72F;
     cursor: pointer;
 }
 
-.ScriptListNav__category-link.active {
+.ScriptListNav_category-link.active {
     background-color: #102541;
 }
-
-.ScripteListNav__num-scripts {
+  
+.ScriptListNav_num-scripts {
     color: #adadad;
     display: block;
     float: right;
     font-size: 10px;
+}
+
+.ScriptListNav_back-button {
+    margin: 45px 20px 25px auto
+}
+
+.ScriptListNav_back-button:hover {
+  background-color: #FFB72F;
 }

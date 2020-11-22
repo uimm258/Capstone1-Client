@@ -15,15 +15,17 @@ export default class ScriptPageMain extends Component {
     render(){
         const {scripts=[]} = this.context
         const {scriptId} = this.props.match.params
-        const script = findScript(scripts, scriptId) || { content: ' '}
+        const script = findScript(scripts, parseInt(scriptId)) || {content: ''}
+
         return (
             <section className="ScriptPageMain">
                 <Script
-                    id={scripts.script_id}
-                    name={scripts.script_name}
-                    time_spend={scripts.time_spend}
-                    type={scripts.script_type}
-                    price={scripts.script_price}
+                    id={script.id}
+                    name={script.scripts_name}
+                    people={script.people}
+                    time_spend={script.time_spend}
+                    type={script.scripts_type}
+                    price={script.scripts_price}
                 />
     
                 <div className="ScriptPageMain_content">

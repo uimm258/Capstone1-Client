@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import Context from '../Context'
-import Header from '../Header/Header'
 import Navbar from '../Navbar/Navbar'
 import config from '../config'
 import ScriptListNav from '../ScriptListNav/ScriptListNav'
 import ScriptListMain from '../ScriptListMain/ScriptListMain'
 import ScriptPageNav from '../ScriptPageNav/ScriptPageNav'
 import ScriptPageMain from '../ScriptPageMain/ScriptPageMain'
+
+import './App.css'
 
 class App extends Component {
   state = {
@@ -17,42 +18,37 @@ class App extends Component {
 
   componentDidMount() {
     Promise.all([
-      fetch(`${config.API_ENDPOINT}/category`),
-      fetch(`${config.API_ENDPOINT}/scripts`)
+        fetch(`${config.API_ENDPOINT}/scripts`),
+        fetch(`${config.API_ENDPOINT}/category`)
     ])
-      .then(([scriptsRes, categoryRes]) => {
-        if (!scriptsRes.ok)
-          return scriptsRes.json().then(e => Promise.reject(e))
-        if (!categoryRes.ok)
-          return categoryRes.json().then(e => Promise.reject(e))
+        .then(([scritpsRes, categoryRes]) => {
+            if (!scritpsRes.ok)
+                return scritpsRes.json().then(e => Promise.reject(e));
+            if (!categoryRes.ok)
+                return categoryRes.json().then(e => Promise.reject(e));
 
-        return Promise.all([
-          scriptsRes.json(),
-          categoryRes.json(),
-        ])
-      })
-      .then(([scripts, category]) => {
-        this.setState({ scripts, category })
-      })
-      .catch(error => {
-        console.error({ error })
-      })
-  }
+            return Promise.all([scritpsRes.json(), categoryRes.json()]);
+        })
+        .then(([scripts, category]) => {
+            this.setState({scripts, category});
+        })
+        .catch(error => {
+            console.error({error});
+        });
+}
 
   renderNavRoutes() {
     return (
       <>
-        {['/', '/category/:categoryId'].map(path =>
+        {["/", "/category/:category_id"].map(path =>(
           <Route
             exact
             key={path}
             path={path}
             component={ScriptListNav}
           />
-        )}
-        <Route
-          path='/scripts/:scriptsId'
-          component={ScriptPageNav}
+        ))}
+        <Route path='/scripts/:scriptId' component={ScriptPageNav}
         />
       </>
     )
@@ -61,16 +57,15 @@ class App extends Component {
   renderMainRoutes() {
     return (
       <>
-
-        {['/', '/category/:categoryId'].map(path => (
-          <Route
+        <Route exact path="/" component={Navbar} />
+        
+        <Route
             exact
-            key={path}
-            path={path}
+            path="/category/:category_id"
             component={ScriptListMain}
           />
-        ))}
-        <Route path="/script/:scriptId" component={ScriptPageMain} />
+        
+        <Route path="/scripts/:scriptId" component={ScriptPageMain} />
       </>
     );
   }
@@ -83,13 +78,18 @@ class App extends Component {
 
     return (
       <Context.Provider value={value}>
-        <div className='App'>
-          <nav className='App__nav'>
+        <div className="App">
+          <nav className="App_nav">
             {this.renderNavRoutes()}
           </nav>
-          <Header />
-          <Navbar />
-          <main className='App__main'>
+
+          <header className="App_header">
+            <h1>
+              <Link to="/">Y-Rspace</Link>
+            </h1>
+          </header>
+
+          <main className="App_main">
             {this.renderMainRoutes()}
           </main>
         </div>

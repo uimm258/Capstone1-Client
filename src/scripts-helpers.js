@@ -1,15 +1,17 @@
-export const findCategory = (category=[], categoryId) =>
-    category.find(cateogory => category.id === categoryId)
+export const findCategory = (category=[], category_id) =>
+    category.find(category => category.id === category_id)
 
-export const findScript = (scripts=[], scriptsId) => 
-    scripts.find(script => script.id === scriptsId)
+export const findScript = (scripts=[], scriptId) => 
+    scripts.find(script => {
+        return script.id === parseInt(scriptId)
+    })
 
-export const getScriptsForCategory = (scripts=[], categoryId) => (
-    (!categoryId)
+export const getScriptsForCategory = (scripts=[], category_id) => (
+    (!category_id)
         ? scripts
-        : scripts.filter(script=> script.categoryId === categoryId)
+        : scripts.filter(script => script.category_id === category_id)
 )
 
-export const countScriptsForCategory = (scripts=[], categoryId) => (
-    scripts.filter(script => script.categoryId === categoryId).length
+export const countScriptsForCategory = (scripts=[], category_id) => (
+    scripts.filter(script => script.category_id === category_id).length
 )

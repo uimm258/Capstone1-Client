@@ -1,5 +1,5 @@
 .Script {
-    --script-height: 88px;
+    --script-height: 108px;
     background-color: #010d1e;
     color: #cacaca;
     height: var(--script-height);
@@ -9,7 +9,7 @@
     position: relative;
 }
 
-.Script__title {
+.Script_title {
     font-family: var(--custom-font);
     font-size: 20px;
     margin: 0;
@@ -17,13 +17,13 @@
     min-height: 24px;
 }
 
-.Script__title a {
+.Script_title a {
     color: #cacaca;
     display: block;
     text-decoration: none;
 }
 
-.Script__title a:hover {
+.SScript_title a:hover {
     color: #FFB72F;
 }
 

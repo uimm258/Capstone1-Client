@@ -16,10 +16,12 @@ export default class Navbar extends Component {
         </div>
 
         <div id="AboutUs">
+          关于我们：
           <AboutUs />
         </div>
 
         <div id="ContactUs">
+          联系我们：
           <ContactUs />
         </div>
       </div>
