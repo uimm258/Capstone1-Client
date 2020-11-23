@@ -7,6 +7,7 @@ import ScriptListNav from '../ScriptListNav/ScriptListNav'
 import ScriptListMain from '../ScriptListMain/ScriptListMain'
 import ScriptPageNav from '../ScriptPageNav/ScriptPageNav'
 import ScriptPageMain from '../ScriptPageMain/ScriptPageMain'
+import logo from './logo.JPG'
 
 import './App.css'
 
@@ -84,8 +85,9 @@ class App extends Component {
           </nav>
 
           <header className="App_header">
+            <img src={logo} alt="Logo" align="left"/>
             <h1>
-              <Link to="/">Y-Rspace 剧本杀桌游店</Link>
+              <Link to="/"> Y-Rspace 剧本杀桌游店</Link>
             </h1>
           </header>
 
