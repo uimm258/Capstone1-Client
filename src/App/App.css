@@ -46,11 +46,9 @@
 
 @media (prefers-reduced-motion: no-preference) {
 
-.App_main {
-  background-color: #efefef;
-  grid-area: main;
-  height: calc(100vh - 120px);
-  overflow: auto;
+.App_header {
+  height: auto;
+  display: flex;
 }
 
 @keyframes App-logo-spin {
