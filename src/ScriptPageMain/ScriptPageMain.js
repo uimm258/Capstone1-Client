@@ -33,7 +33,7 @@ export default class ScriptPageMain extends Component {
                     <img src={`${script.scripts_image}`} alt="暂无图片" />
                 </div>
                 <div className="ScriptPageMain_content">
-                    {script.content.split(/\n \r|\n/).map((para, i) =><p key={i}>{para}</p>
+                    {script.content.split(/\\n \\r|\\n/).map((para, i) =><p key={i}>{para}</p>
                     )}
                 </div>
             </section>
