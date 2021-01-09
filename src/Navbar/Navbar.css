@@ -15,15 +15,6 @@
 	color: #069;
 	border-right: 1px solid #ccc; }
 
-#nav li a {
-	display: block;
-	padding: 8px 15px;
-	text-decoration: none;
-	font-weight: bold;
-	color: #069;
-	border-right: 1px solid #ccc; 
-}
-
 footer {
     position: 'absolute';
     bottom:0;
@@ -37,10 +28,6 @@ footer {
         
 /* Media screen size */
 @media screen and (min-width: 768px) {
-    button {
-        display: none;
-    }
-
     .links {
         height: auto;
         display: flex;

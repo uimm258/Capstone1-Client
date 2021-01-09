@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import AboutUs from './AboutUs';
 import ContactUs from './ContactUs';
 import './Navbar.css';
-import Rules from './Rules'
+import Rules from './Rules';
+import { Link } from 'react-router-dom';
+
 
 export default class Navbar extends Component {
   render() {
@@ -13,6 +15,7 @@ export default class Navbar extends Component {
             <li><a href="#AboutUs">关于我们</a></li>
             <li><a href="#Rules">剧本杀须知</a></li>
             <li><a href="#ContactUs">联系我们</a></li>
+            <li><Link to="/login">管理者登录</Link></li>
           </ul>
         </div>
 
