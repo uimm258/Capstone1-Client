@@ -27,21 +27,25 @@ As an admin:
 * Homepage
 :-------------------------:
 ![Homepage](./README_screenshots/Homepage-visitor.png)
-* Category-page
+* Category-page && Script-list-page
 :-------------------------:
-* Script-list-page
-:-------------------------:
+![Category-page](./README_screenshots/Script-List-Visitor.png)
 * Script-main-page
 :-------------------------:
+![Script-Main-Page](./README_screenshots/Script-Main-Visitor-1.png)
+![Script-Main-Page](./README_screenshots/Script-Main-Visitor-2.png)
 
 ### Screenshots with logins
 * Homepage
 :-------------------------:
+![Homepage](./README_screenshots/Homepage-login.png)
 * Login page
 :-------------------------:
-* Category-page
+![LoginPage](./README_screenshots/LoginPage.png)
+* Category-page && Script-list-page
 :-------------------------:
-* Script-list-page
-:-------------------------:
+![Category-page](./README_screenshots/Script-List-with-delete.png)
 * Script-main-page
 :-------------------------:
+![Script-Main-Page](./README_screenshots/Script-Main-with-edit-2.png)
+![Script-Main-Page](./README_screenshots/Script-Main-with-edit-2.png)
