@@ -1,23 +1,14 @@
 /* eslint-disable array-callback-return */
 import React, {Component} from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import {countScriptsForCategory} from '../scripts-helpers'
 import './ScriptListNav.css'
 import Context from '../Context'
 import CircleButton from '../CircleButton/CircleButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import TokenService from '../services/token-service'
 
 export default class ScriptListNav extends Component{
-    static defaultProps = { 
-        history: {
-            goBack: () => { }
-        },
-        match: {
-            params: {}
-        }
-    }
-
     static contextType = Context
 
     renderBackButton = () => {
@@ -54,6 +45,17 @@ export default class ScriptListNav extends Component{
                         </li>
                     )}
                 </ul>
+
+                <div>
+                    {TokenService.hasAuthToken() && <CircleButton
+                        tag={Link}
+                        to='/add-category'
+                        type='button'
+                        className="add-category-button">
+                        <br />
+                        添加新的剧本列表
+                    </CircleButton>}
+                </div>
             </div>
         )
     }

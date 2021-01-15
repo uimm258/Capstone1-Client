@@ -3,6 +3,9 @@ import Script from '../Script/Script'
 import Context from '../Context'
 import {getScriptsForCategory} from '../scripts-helpers'
 import './ScriptListMain.css'
+import CircleButton from '../CircleButton/CircleButton'
+import { Link } from 'react-router-dom'
+import TokenService from '../services/token-service'
 
 export default class ScriptListMain extends Component {
   static defaultProps={
@@ -34,6 +37,17 @@ export default class ScriptListMain extends Component {
             </li>
           )}
         </ul>
+
+        <div>
+          {TokenService.hasAuthToken() && <CircleButton 
+            tag={Link}
+            to='/add-script'
+            type='button'
+            className="add-script-button">
+            <br />
+            添加新的剧本
+          </CircleButton>}
+        </div>
       </section>
     )
   }

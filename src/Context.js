@@ -13,6 +13,12 @@ const UserContext = React.createContext({
   processLogout: () => {},
   category: [],
   scripts: [],
+  addCategory: () => {},
+  addScript: () => {},
+  deleteCategory: () => {},
+  deleteScript: () => {},
+  editCategory: () => {},
+  editScript: () => {}
 })
 
 export default UserContext

@@ -54,3 +54,7 @@
 .ScriptListNav_back-button:hover {
   background-color: #FFB72F;
 }
+
+.add-category-button {
+    margin: 45px 20px 25px auto
+}

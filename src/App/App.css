@@ -44,11 +44,12 @@
   overflow: auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
 
-.App_header {
-  height: auto;
-  display: flex;
+@media only screen and (min-width: 768px) {
+  .App_header {
+    height: auto;
+    display: flex;
+  
 }
 
 @keyframes App-logo-spin {

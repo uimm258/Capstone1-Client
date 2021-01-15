@@ -3,6 +3,9 @@ import Script from '../Script/Script'
 import Context from '../Context'
 import {findScript} from '../scripts-helpers'
 import './ScriptPageMain.css'
+import TokenService from '../services/token-service'
+import { Link } from 'react-router-dom'
+import CircleButton from '../CircleButton/CircleButton'
 
 export default class ScriptPageMain extends Component {
     static defaultProps = {
@@ -13,6 +16,16 @@ export default class ScriptPageMain extends Component {
 
     static contextType = Context
 
+    handleEditScript = script => {
+        this.setState({
+            scripts: [...this.state.scripts, script]
+        })
+    }
+
+    handleDeleteScript = scriptId => {
+        this.props.history.push(`/`)
+    }
+
     render(){
         const {scripts=[]} = this.context
         const {scriptId} = this.props.match.params
@@ -20,6 +33,7 @@ export default class ScriptPageMain extends Component {
 
         return (
             <section className="ScriptPageMain">
+
                 <Script
                     id={script.id}
                     name={script.scripts_name}
@@ -27,6 +41,8 @@ export default class ScriptPageMain extends Component {
                     time_spend={script.time_spend}
                     type={script.scripts_type}
                     price={script.scripts_price}
+                    onEditScript={this.handleEditScript}
+                    onDeleteScript={this.handleDeleteScript}
                 />
     
                 <div className="ScriptPageMain_image">
@@ -36,6 +52,9 @@ export default class ScriptPageMain extends Component {
                     {script.content.split(/\\n \\r|\\n/).map((para, i) =><p key={i}>{para}</p>
                     )}
                 </div>
+
+                {TokenService.hasAuthToken() && <CircleButton className="edit-button" type="button" tag={Link} to='/edit-script'>修改剧本
+                </CircleButton>}
             </section>
         )
     }

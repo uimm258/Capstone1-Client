@@ -8,9 +8,11 @@ import ScriptListMain from '../ScriptListMain/ScriptListMain'
 import ScriptPageNav from '../ScriptPageNav/ScriptPageNav'
 import ScriptPageMain from '../ScriptPageMain/ScriptPageMain'
 import logo from './logo.JPG'
-import LoginRoute from '../Login/LoginRoute';
-
+import LoginRoute from '../Login/LoginRoute'
+import AddCategory from '../AddCategory/AddCategory'
+import AddScript from '../AddScript/AddScript'
 import './App.css'
+import EditScript from '../EditScript/EditScript'
 
 class App extends Component {
   state = {
@@ -39,6 +41,30 @@ class App extends Component {
         });
 }
 
+  handleAddCategory = category1 => {
+    this.setState({
+      category: [...this.state.category, category1]
+    }
+  )}
+
+  handleAddScript = script => {
+    this.setState({
+      scripts: [...this.state.scripts, script]
+    })
+  }
+
+  handleEditScript = script => {
+    this.setState({
+      scripts: [...this.state.scripts, script]
+    })
+  }
+
+  handleDeleteScript = scriptId => {
+    this.setState({
+      scripts: this.state.scripts.filter(script => script.id !== scriptId)
+    })
+  }
+
   renderNavRoutes() {
     return (
       <>
@@ -52,6 +78,8 @@ class App extends Component {
         ))}
         <Route path='/scripts/:scriptId' component={ScriptPageNav}
         />
+        <Route path='/add-category' component={ScriptPageNav} />
+        <Route path='/add-script' component={ScriptPageNav} />
       </>
     )
   }
@@ -69,6 +97,9 @@ class App extends Component {
           />
         
         <Route path="/scripts/:scriptId" component={ScriptPageMain} />
+        <Route path='/add-category' component={AddCategory} />
+        <Route path='/add-script' component={AddScript} />
+        <Route path='/edit-script' component={EditScript} />
       </>
     );
   }
@@ -76,7 +107,11 @@ class App extends Component {
   render() {
     const value = {
       category: this.state.category,
-      scripts: this.state.scripts
+      scripts: this.state.scripts,
+      addCategory: this.handleAddCategory,
+      addScript: this.handleAddScript,
+      editScript: this.handleEditScript,
+      deleteScript: this.handleDeleteScript
     };
 
     return (

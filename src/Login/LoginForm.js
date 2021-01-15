@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AuthApiService from '../services/auth-api-service';
-//import TokenService from '../../services/token-service'
 import Context from '../Context';
+import TokenService from '../services/token-service';
 
 
 class LoginForm extends Component {
@@ -33,7 +33,8 @@ class LoginForm extends Component {
     }).then(res => {
       username.value = ' '
       password.value = ' '
-      this.context.processLogin(res.authToken)
+      //this.context.processLogin(res.authToken)
+      TokenService.saveAuthToken(res.authToken)
       this.props.onLoginSuccess()
     }).catch(res => {
       this.setState({ error: res.error })
