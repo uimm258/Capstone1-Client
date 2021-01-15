@@ -26,6 +26,7 @@ As an admin:
 ### Screenshots without logins
 * Homepage
 :-------------------------:
+![Homepage](./README_screenshots/Homepage-visitor.png)
 * Category-page
 :-------------------------:
 * Script-list-page

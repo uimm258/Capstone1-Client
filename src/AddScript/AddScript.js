@@ -88,7 +88,7 @@ export default class AddScript extends Component {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                'authorization': `bearer.${TokenService.getAuthToken()}`
+                'authorization': `bearer ${TokenService.getAuthToken()}`
             },
             body: JSON.stringify({
                 'name': scriptName,
