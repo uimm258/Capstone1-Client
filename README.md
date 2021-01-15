@@ -1,14 +1,14 @@
 ### Y-Rspace Server
 
-Live App: https://yrspace.vercel.app/
-Database URL: https://y-rspace.herokuapp.com/
-Client Repo: https://github.com/uimm258/Hongni-Capstone1-Client
-Server Repo: https://github.com/uimm258/Hongni-Capstone1-Server
+* Live App: https://yrspace.vercel.app/
+* Database URL: https://y-rspace.herokuapp.com/
+* Client Repo: https://github.com/uimm258/Hongni-Capstone1-Client
+* Server Repo: https://github.com/uimm258/Hongni-Capstone1-Server
 
 ### Stack Used
 
-Client: HTML, CSS, React.Js
-Server: Express and Node.Js
+* Client: HTML, CSS, React.Js
+* Server: Express and Node.Js
 
 ### User Stories
 This app is for two types of users: a visitor and an admin
