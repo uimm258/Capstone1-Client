@@ -17,9 +17,12 @@ export default class ScriptPageMain extends Component {
     static contextType = Context
 
     handleEditScript = script => {
-        this.setState({
-            scripts: [...this.state.scripts, script]
-        })
+        this.context.editScript = script;
+        console.log(script)
+        this.props.history.push(`/${script.id}/edit-script`)
+        // this.setState({
+        //     scripts: [...this.state.scripts, script]
+        // })
     }
 
     handleDeleteScript = scriptId => {
@@ -53,8 +56,8 @@ export default class ScriptPageMain extends Component {
                     )}
                 </div>
 
-                {TokenService.hasAuthToken() && <CircleButton className="edit-button" type="button" tag={Link} to='/edit-script'>修改剧本
-                </CircleButton>}
+                {TokenService.hasAuthToken() && <button onClick={()=>this.handleEditScript(script)}>修改剧本</button>}
+
             </section>
         )
     }

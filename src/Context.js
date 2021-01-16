@@ -18,7 +18,7 @@ const UserContext = React.createContext({
   deleteCategory: () => {},
   deleteScript: () => {},
   editCategory: () => {},
-  editScript: () => {}
+  editScript: {},
 })
 
 export default UserContext

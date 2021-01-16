@@ -99,7 +99,7 @@ class App extends Component {
         <Route path="/scripts/:scriptId" component={ScriptPageMain} />
         <Route path='/add-category' component={AddCategory} />
         <Route path='/add-script' component={AddScript} />
-        <Route path='/edit-script' component={EditScript} />
+        <Route path='/:scriptId/edit-script' component={EditScript} />
       </>
     );
   }

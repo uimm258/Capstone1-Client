@@ -4,7 +4,6 @@ import Context from '../Context'
 import config from '../config'
 import './Script.css'
 import TokenService from "../services/token-service"
-import CircleButton from '../CircleButton/CircleButton'
 
 export default class Script extends Component {
     static contextType = Context
@@ -17,11 +16,11 @@ export default class Script extends Component {
     handleClickDelete = (e) => {
         e.preventDefault();
         const scriptId = this.props.id
-        fetch(`${config.API_ENDPOINT}/scripts/${scriptId}`, {
+        fetch(`${config.API_ENDPOINT}/admin/scripts/${scriptId}`, {
             method: "DELETE",
             headers: {
                 'content-type': 'application/json',
-                'authorization': `bearer.${TokenService.getAuthToken()}`
+                'authorization': `bearer ${TokenService.getAuthToken()}`
             }
         })
             .then((res) => {

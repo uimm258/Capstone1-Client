@@ -26,17 +26,12 @@ export default class AddCategory extends Component {
                 name: categoryName,
                 touched: true
             },
-            admin_id: {
-                adminId: 1,
-                touched: true
-            }
         })
     }
 
     handleSubmitCategory = (event) => {
         event.preventDefault()
-        const categoryName = this.state.categoryName.value
-        const adminId = this.state.adminId.value
+        const categoryName = this.state.categoryName.name
         
         fetch(`${config.API_ENDPOINT}/admin/category`, {
             method: 'POST',
@@ -44,7 +39,7 @@ export default class AddCategory extends Component {
                 'content-type': 'application/json',
                 'authorization': `bearer ${TokenService.getAuthToken()}`
             },
-            body: JSON.stringify({'name': categoryName, 'adminId': adminId})
+            body: JSON.stringify({'category_name': categoryName})
         })
         .then(res => res.json())
         .then(data => {
@@ -55,6 +50,7 @@ export default class AddCategory extends Component {
     }
 
     render() {
+        console.log(this.state.categoryName)
         return(
             <div>
                 <h2>添加新的剧本人数列表</h2>
@@ -62,9 +58,9 @@ export default class AddCategory extends Component {
                 <form onSubmit={e=> this.handleSubmitCategory(e)}>
                     <label htmlFor="name">{this.state.categoryName.touched}</label>
                     <input type="test" name="category-name" onChange={e=>this.updateCategoryName(e.target.value)}></input>
-                </form>
 
-                <button type="submit">确认</button>
+                    <button type="submit">确认</button>
+                </form>
 
             </div>
         )
