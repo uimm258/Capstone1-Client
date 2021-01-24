@@ -25,7 +25,6 @@
   padding-left: 32px;
   text-shadow: 2px 1px 2px black;
   padding-top: 10px;
-  margin-top: 0px;
 }
 
 .App_header img {
@@ -47,7 +46,7 @@
 }
 
 
-@media all and (min-width: 768px) {
+@media all and (min-width: 400px) {
   .App_header {
     font-size: 20px;
   }
