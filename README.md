@@ -19,7 +19,7 @@ As a visitor:
 * I don't want to sign-up for the admin access
 
 As an admin:
-* I want to be able add/edit/delete categories/scripts
+* I want to be able add/delete categories/scripts
 * I want to enter my password and username to log into this app
 * I do not want to anyone else to have the admin access
 

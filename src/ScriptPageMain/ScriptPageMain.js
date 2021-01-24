@@ -3,9 +3,8 @@ import Script from '../Script/Script'
 import Context from '../Context'
 import {findScript} from '../scripts-helpers'
 import './ScriptPageMain.css'
-import TokenService from '../services/token-service'
-import { Link } from 'react-router-dom'
-import CircleButton from '../CircleButton/CircleButton'
+//import TokenService from '../services/token-service'
+//import { Link } from 'react-router-dom'
 
 export default class ScriptPageMain extends Component {
     static defaultProps = {
@@ -16,14 +15,14 @@ export default class ScriptPageMain extends Component {
 
     static contextType = Context
 
-    handleEditScript = script => {
+    /*handleEditScript = script => {
         this.context.editScript = script;
         console.log(script)
         this.props.history.push(`/${script.id}/edit-script`)
         // this.setState({
         //     scripts: [...this.state.scripts, script]
         // })
-    }
+    }*/
 
     handleDeleteScript = scriptId => {
         this.props.history.push(`/`)
@@ -56,7 +55,8 @@ export default class ScriptPageMain extends Component {
                     )}
                 </div>
 
-                {TokenService.hasAuthToken() && <button onClick={()=>this.handleEditScript(script)}>修改剧本</button>}
+                {/* 
+                {TokenService.hasAuthToken() && <button onClick={()=>this.handleEditScript(script)}>修改剧本</button>}*/}
 
             </section>
         )

@@ -65,6 +65,12 @@ class App extends Component {
     })
   }
 
+  handleDeleteCategory = categoryId => {
+    this.setState({
+      category: this.state.category.filter(category1 => category1.id !== categoryId)
+    })
+  }
+
   renderNavRoutes() {
     return (
       <>
@@ -111,7 +117,8 @@ class App extends Component {
       addCategory: this.handleAddCategory,
       addScript: this.handleAddScript,
       editScript: this.handleEditScript,
-      deleteScript: this.handleDeleteScript
+      deleteScript: this.handleDeleteScript,
+      deleteCategory: this.handleDeleteCategory
     };
 
     return (

@@ -1,24 +1,48 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Script from '../Script/Script'
 import Context from '../Context'
-import {getScriptsForCategory} from '../scripts-helpers'
+import { getScriptsForCategory } from '../scripts-helpers'
 import './ScriptListMain.css'
 import CircleButton from '../CircleButton/CircleButton'
 import { Link } from 'react-router-dom'
 import TokenService from '../services/token-service'
+import config from '../config'
 
 export default class ScriptListMain extends Component {
-  static defaultProps={
+  static defaultProps = {
     match: {
-      params: { }
+      params: {}
     }
   }
 
   static contextType = Context
 
-  render(){
-    const {category_id} = this.props.match.params
-    const {scripts=[]} = this.context
+  handleDeleteCategory = () => {
+    const categoryId = Object.values(this.props.match.params)
+    fetch(`${config.API_ENDPOINT}/admin/category/${categoryId}`, {
+      method: "DELETE",
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `bearer ${TokenService.getAuthToken()}`
+      }
+    })
+      .then((res) => {
+        if (!res.ok) return res.json().then((e) => Promise.reject(e));
+      })
+      .then(() => {
+        this.context.deleteCategory(categoryId)
+      })
+      .catch((e) => console.log(e))
+  }
+
+  onClickEffect = () => {
+    this.handleDeleteCategory()
+    window.location.href='/'
+  }
+
+  render() {
+    const { category_id } = this.props.match.params
+    const { scripts = [] } = this.context
     const scriptsForCategory = getScriptsForCategory(scripts, parseInt(category_id))
 
     return (
@@ -39,7 +63,7 @@ export default class ScriptListMain extends Component {
         </ul>
 
         <div>
-          {TokenService.hasAuthToken() && <CircleButton 
+          {TokenService.hasAuthToken() && <CircleButton
             tag={Link}
             to='/add-script'
             type='button'
@@ -48,8 +72,10 @@ export default class ScriptListMain extends Component {
             添加新的剧本
           </CircleButton>}
         </div>
+
+        {TokenService.hasAuthToken() && <button onClick={this.onClickEffect}>Delete the Current Category</button>}
       </section>
     )
   }
 }
-  
+

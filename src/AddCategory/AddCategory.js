@@ -50,7 +50,6 @@ export default class AddCategory extends Component {
     }
 
     render() {
-        console.log(this.state.categoryName)
         return(
             <div>
                 <h2>添加新的剧本人数列表</h2>
