@@ -25,6 +25,7 @@
   padding-left: 32px;
   text-shadow: 2px 1px 2px black;
   padding-top: 10px;
+  margin-top: 0px;
 }
 
 .App_header img {
@@ -35,6 +36,7 @@
 .App_header a {
   color: white;
   font-size: 40px;
+  text-decoration: none;
 }
 
 .App_main {
@@ -45,11 +47,15 @@
 }
 
 
-@media only screen and (min-width: 768px) {
+@media all and (min-width: 768px) {
   .App_header {
-    height: auto;
-    display: flex;
-  
+    font-size: 20px;
+  }
+  .App_header img {
+    width: 10%;
+    height: 70%;
+    margin-top: 10px;
+  }
 }
 
 @keyframes App-logo-spin {
@@ -61,4 +67,3 @@
   }
 }
 
-}

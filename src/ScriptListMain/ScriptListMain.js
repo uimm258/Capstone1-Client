@@ -17,7 +17,8 @@ export default class ScriptListMain extends Component {
 
   static contextType = Context
 
-  handleDeleteCategory = () => {
+  handleDeleteCategory = (e) => {
+    e.preventDefault()
     const categoryId = Object.values(this.props.match.params)
     fetch(`${config.API_ENDPOINT}/admin/category/${categoryId}`, {
       method: "DELETE",
