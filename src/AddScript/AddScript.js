@@ -201,7 +201,7 @@ export default class AddScript extends Component {
                     <label for="content">
                         内容: {this.state.content.touched}
 
-                        <input id="content" type="text" onChange={(e) => this.updateContent(e.target.value)} />
+                        <textarea cols="60" rows="10" id="content" type="text" onChange={(e) => this.updateContent(e.target.value)}></textarea>
                     </label>
                     <br></br>
 
