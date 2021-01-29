@@ -7,12 +7,10 @@ import ScriptListNav from '../ScriptListNav/ScriptListNav'
 import ScriptListMain from '../ScriptListMain/ScriptListMain'
 import ScriptPageNav from '../ScriptPageNav/ScriptPageNav'
 import ScriptPageMain from '../ScriptPageMain/ScriptPageMain'
-import logo from './logo.JPG'
 import LoginRoute from '../Login/LoginRoute'
 import AddCategory from '../AddCategory/AddCategory'
 import AddScript from '../AddScript/AddScript'
 import './App.css'
-import EditScript from '../EditScript/EditScript'
 
 class App extends Component {
   state = {
@@ -48,12 +46,6 @@ class App extends Component {
   )}
 
   handleAddScript = script => {
-    this.setState({
-      scripts: [...this.state.scripts, script]
-    })
-  }
-
-  handleEditScript = script => {
     this.setState({
       scripts: [...this.state.scripts, script]
     })
@@ -105,7 +97,7 @@ class App extends Component {
         <Route path="/scripts/:scriptId" component={ScriptPageMain} />
         <Route path='/add-category' component={AddCategory} />
         <Route path='/add-script' component={AddScript} />
-        <Route path='/:scriptId/edit-script' component={EditScript} />
+
       </>
     );
   }
@@ -116,7 +108,6 @@ class App extends Component {
       scripts: this.state.scripts,
       addCategory: this.handleAddCategory,
       addScript: this.handleAddScript,
-      editScript: this.handleEditScript,
       deleteScript: this.handleDeleteScript,
       deleteCategory: this.handleDeleteCategory
     };
@@ -129,7 +120,6 @@ class App extends Component {
           </nav>
 
           <header className="App_header">
-            <img src={logo} alt="Logo" align="left"/>
             <h1>
               <Link to="/"> Y-Rspace 剧本杀桌游店</Link>
             </h1>

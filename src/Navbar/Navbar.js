@@ -4,6 +4,7 @@ import ContactUs from './ContactUs';
 import './Navbar.css';
 import Rules from './Rules';
 import { Link } from 'react-router-dom';
+import logo from './logo.JPG';
 
 
 export default class Navbar extends Component {
@@ -22,13 +23,20 @@ export default class Navbar extends Component {
         <section className="Navbar_info">
           <div id="AboutUs">
             <h1>关于我们：</h1>
+            <img src={logo} alt="Logo" align="left"/>
             <AboutUs />
           </div>
+          <br />
+          <br />
+          <br />
           <br />
           <div id="Rules">
             <h1>剧本杀须知：</h1>
             <Rules />
           </div>
+          <br />
+          <br />
+          <br />
           <br />
           <div id="ContactUs">
             <h1>联系我们：</h1>

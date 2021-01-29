@@ -24,12 +24,6 @@
   grid-area: header;
   padding-left: 32px;
   text-shadow: 2px 1px 2px black;
-  padding-top: 10px;
-}
-
-.App_header img {
-  width: 100px;
-  height: 100px;
 }
 
 .App_header a {
@@ -49,6 +43,7 @@
 @media all and (min-width: 400px) {
   .App_header {
     font-size: 20px;
+    padding-top: -30px;
   }
   .App_header img {
     width: 10%;

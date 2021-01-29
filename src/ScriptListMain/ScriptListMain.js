@@ -17,8 +17,7 @@ export default class ScriptListMain extends Component {
 
   static contextType = Context
 
-  handleDeleteCategory = (e) => {
-    e.preventDefault()
+  handleDeleteCategory = () => {
     const categoryId = Object.values(this.props.match.params)
     fetch(`${config.API_ENDPOINT}/admin/category/${categoryId}`, {
       method: "DELETE",
@@ -32,13 +31,9 @@ export default class ScriptListMain extends Component {
       })
       .then(() => {
         this.context.deleteCategory(categoryId)
+        window.location.href='/'
       })
       .catch((e) => console.log(e))
-  }
-
-  onClickEffect = () => {
-    this.handleDeleteCategory()
-    window.location.href='/'
   }
 
   render() {
@@ -74,7 +69,7 @@ export default class ScriptListMain extends Component {
           </CircleButton>}
         </div>
 
-        {TokenService.hasAuthToken() && <button onClick={this.onClickEffect}>Delete the Current Category</button>}
+        {TokenService.hasAuthToken() && <button onClick={this.handleDeleteCategory}>Delete the Current Category</button>}
       </section>
     )
   }

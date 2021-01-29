@@ -25,6 +25,11 @@ footer {
 	font-family: var(--custom-font);
 	padding-left: 32px;
 }
+
+#AboutUs img{
+	height: 10%;
+	width: 10%;
+}
         
 /* Media screen size */
 @media screen and (min-width: 768px) {

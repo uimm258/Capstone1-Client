@@ -15,15 +15,6 @@ export default class ScriptPageMain extends Component {
 
     static contextType = Context
 
-    /*handleEditScript = script => {
-        this.context.editScript = script;
-        console.log(script)
-        this.props.history.push(`/${script.id}/edit-script`)
-        // this.setState({
-        //     scripts: [...this.state.scripts, script]
-        // })
-    }*/
-
     handleDeleteScript = scriptId => {
         this.props.history.push(`/`)
     }
@@ -43,7 +34,6 @@ export default class ScriptPageMain extends Component {
                     time_spend={script.time_spend}
                     type={script.scripts_type}
                     price={script.scripts_price}
-                    onEditScript={this.handleEditScript}
                     onDeleteScript={this.handleDeleteScript}
                 />
     
@@ -54,9 +44,6 @@ export default class ScriptPageMain extends Component {
                     {script.content.split(/\\n \\r|\\n/).map((para, i) =><p key={i}>{para}</p>
                     )}
                 </div>
-
-                {/* 
-                {TokenService.hasAuthToken() && <button onClick={()=>this.handleEditScript(script)}>修改剧本</button>}*/}
 
             </section>
         )
