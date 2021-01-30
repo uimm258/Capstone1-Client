@@ -8,8 +8,8 @@ it('renders without crashing', () => {
     const div = document.createElement('root');
     ReactDOM.render(
         <BrowserRouter>
-            <ScriptListNav />
-        </BrowserRouter>,
+            <ScriptListNav match={{path: '/'}}/>
+        </BrowserRouter >,
         div
     );
 })
