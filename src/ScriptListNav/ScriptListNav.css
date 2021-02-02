@@ -38,6 +38,8 @@
     font-weight: bold;
     font-size: 36px;
     color:white;
+    writing-mode: vertical-lr;
+    text-orientation: upright;
 }
   
 .ScriptListNav_num-scripts {
